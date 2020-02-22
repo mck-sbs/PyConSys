@@ -34,10 +34,9 @@ for w in w_lst:
     y = pid_control.get_xa(e)
     if i > 250:
         z = 0.5
-        x = pt2.get_xa(y) + z
     else:
         z = 0
-        x = pt2.get_xa(y)
+    x = pt2.get_xa(y) + z
     e_lst.append(e)
     y_lst.append(y)
     x_lst.append(x)
