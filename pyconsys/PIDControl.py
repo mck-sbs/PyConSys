@@ -9,7 +9,7 @@ from pyconsys.IControl import IControl
 from pyconsys.DControl import DControl
 
 
-class PIDControl:
+class PIDControl():
     def __init__(self, kp, ki, kd):
         self._pControl = PControl(kp)
         self._iControl = IControl(ki)

@@ -5,7 +5,6 @@
 # 2020, Metin Karatas (m.karatas@sbs-herzogenaurach.de)
 
 class Control():
-
     DELTA_T = 0.01
 
     def get_xa(self, xe):
