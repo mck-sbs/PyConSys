@@ -1,6 +1,8 @@
 # Any copyright is dedicated to the Public Domain.
 # https://creativecommons.org/publicdomain/zero/1.0/
 
+# 2020, Metin Karatas (m.karatas@sbs-herzogenaurach.de)
+
 from pyconsys.PControl import PControl
 from pyconsys.IControl import IControl
 from pyconsys.DControl import DControl
