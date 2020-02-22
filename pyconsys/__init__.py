@@ -4,4 +4,4 @@
 
 # 2020, Metin Karatas (m.karatas@sbs-herzogenaurach.de)
 
-__all__ = ["DControl", "IControl", "PControl", "PT1", "PT2"]
+__all__ = ["DControl", "IControl", "PControl", "PT1", "PT2", "PIDControl"]
