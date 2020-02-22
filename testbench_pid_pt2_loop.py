@@ -1,7 +1,6 @@
 # Any copyright is dedicated to the Public Domain.
 # https://creativecommons.org/publicdomain/zero/1.0/
 
-# 2020, Metin Karatas (m.karatas@sbs-herzogenaurach.de)
 
 from pyconsys.PIDControl import PIDControl
 from pyconsys.Control import Control
