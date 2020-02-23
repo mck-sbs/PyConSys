@@ -7,7 +7,7 @@ ________________________________________________________________________________
 
 Regelungstechnik mit Excel und Python
 
-Implementierung der Regelglieder und Regelkreise in Excel und Python mithilfe der Numerik. PID Parameter können mit ython automatisch ermittelt werden.
+Implementierung der Regelglieder und Regelkreise in Excel und Python mithilfe der Numerik. PID Parameter können mit Python automatisch ermittelt werden.
 
 Aus dem Unterricht "Mechatronische Systeme" und "Künstliche Intelligenz" an der Fachschule für Maschinenbautechnik und Mechatroniktechnik, SBS Herzogenaurach-Höchstadt.
 
