@@ -3,4 +3,4 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 
-__all__ = ["Control", "DControl", "IControl", "PControl", "PT1", "PT2", "PIDControl", "Rating"]
+__all__ = ["Control", "DControl", "IControl", "PControl", "PT1", "PT2", "PIDControl", "Rating", "Evopid"]

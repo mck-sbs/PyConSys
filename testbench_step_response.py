@@ -20,7 +20,7 @@ d_control = DControl(1)
 pt1 = PT1(1, 0.5)
 pt2 = PT2(0.02, 0.05, 1, 1)
 
-xe_lst = [x * Control.DELTA_T for x in range(0, 500)]
+xe_lst = [x for x in range(0, 500)]
 
 xa_lst_p = [p_control.get_xa(1) if x > 1 else p_control.get_xa(0) for x in xe_lst]
 xa_lst_i = [i_control.get_xa(1) if x > 1 else i_control.get_xa(0) for x in xe_lst]

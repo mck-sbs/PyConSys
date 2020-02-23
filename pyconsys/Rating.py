@@ -7,31 +7,33 @@ from math import isnan
 
 class Rating():
 
-    def __init__(self, lst, w):
-        self._lst = lst
-        self._w = w
-        self._chunk_size = 100
+    # def __init__(self, lst, w):
+    #     self._lst = lst
+    #     self._w = w
+    #     self._chunk_size = 100
 
     def __init__(self):
         self._chunk_size = 100
+        self._lst = []
+        self._w = 0
 
-    def get_rating(self):
+    def get_update_rating(self, lst, w):
+        self._lst = lst
+        self._w = w
+        ret = self._get_rating()
+        return ret
+
+    def _get_rating(self):
 
         osc = self._get_oscillate_rating() * 5
         ovr = self._get_overflow_rating() * 20
-        dst = abs(100 - self._get_distance_rating(self._lst, self._w)) * 10
+        dst = abs(100 - self._get_distance_rating(self._lst, self._w)) * 20
         tm = self._get_timetoreach_rating() * 5
         rate_raw = osc + ovr + dst + tm
         rat = 1000 - rate_raw
         if rat < 0 or isnan(rat):
             rat = 0
         return rat
-
-    def get_update_rating(self, lst, w):
-        self._lst = lst
-        self._w = w
-        ret = self.get_rating()
-        return ret
 
     def _get_oscillate_rating(self):
         arr = np.asarray(self._lst)

@@ -22,7 +22,7 @@ pid_control = PIDControl(pid_p, pid_i, pid_d)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
-xe_lst = [x * Control.DELTA_T for x in range(0, 500)]
+xe_lst = [x for x in range(0, 500)]
 w_lst = [1 for x in xe_lst]
 e_lst = []
 y_lst = []
@@ -38,6 +38,7 @@ for _ in range(0, 1000):
     pid_i = randint(0, 2000) / 100
     pid_d = randint(0, 1000) / 1000
     pid_control.update_params(pid_p, pid_i, pid_d)
+    pt2.reset()
 
     for w in w_lst:
         e = w - x
@@ -63,6 +64,7 @@ for _ in range(0, 1000):
 
 # once again with the best params for plotting
 pid_control.update_params(best_pid_p, best_pid_i, best_pid_d)
+pt2.reset()
 print("##### Best rating: {:7.2f} #####".format(best_rating))
 e = y = x = z = 0
 for w in w_lst:
@@ -86,7 +88,7 @@ plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')
 plt.grid(which='minor', linestyle=':', linewidth='0.3')
 
-plt.xlabel('k in hundreds')
+plt.xlabel('k')
 plt.title("PT2 control loop with random PID")
 plt.text(1.5, 0.3, txt_pid, bbox=dict(facecolor='white', alpha=0.5))
 plt.text(1.5, 0.1, txt_pt2, bbox=dict(facecolor='white', alpha=0.5))
