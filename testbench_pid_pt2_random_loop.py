@@ -22,7 +22,7 @@ pid_control = PIDControl(pid_p, pid_i, pid_d)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
-xe_lst = [x for x in range(0, 500)]
+xe_lst = [x for x in range(0, 5000)]
 w_lst = [1 for x in xe_lst]
 e_lst = []
 y_lst = []
