@@ -7,7 +7,6 @@ import random
 class Evopid():
 
     def __init__(self):
-        self._pop_size = 800
         self._fittest_cnt = 10
         self._lucky_few = 150
         self._children_cnt = 10
@@ -79,4 +78,4 @@ class Evopid():
         return random.randint(0, 2000) / 100
 
     def _get_d(self):
-        return random.randint(0, 1000) / 1000
+        return random.randint(0, 5000) / 1000
