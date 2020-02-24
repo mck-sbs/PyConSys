@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import statistics
 import time
 
-pt2_a2 = 0.02
+pt2_a2 = 0.2
 pt2_a1 = 0.1
 pt2_a0 = 1
 pt2_b0 = 1

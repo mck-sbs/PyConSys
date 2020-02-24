@@ -13,7 +13,7 @@ pid_p = 10
 pid_i = 20
 pid_d = 0.9
 
-pt2_a2 = 0.02
+pt2_a2 = 0.2
 pt2_a1 = 0.1
 pt2_a0 = 1
 pt2_b0 = 1
@@ -31,7 +31,7 @@ z_lst = []
 
 best_pid_p = best_pid_i = best_pid_d = best_rating = 0
 
-for _ in range(0, 1000):
+for _ in range(0, 100):
 
     e = y = x = z = 0
     pid_p = randint(0, 2000) / 100
