@@ -16,7 +16,7 @@ p_control = PControl(1)
 i_control = IControl(1)
 d_control = DControl(1)
 pt1 = PT1(1, 0.5)
-pt2 = PT2(0.02, 0.05, 1, 1)
+pt2 = PT2(0.2, 0.05, 1, 1)
 
 xe_lst = [x for x in range(0, 1000)]
 
