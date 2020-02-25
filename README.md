@@ -1,5 +1,5 @@
 # PyConSys
-Control System with Python and Artificial Intelligence (Evolutionary Algorithm)
+**Control System with Python and Artificial Intelligence (Evolutionary Algorithm)**
 
 Control units and control loops implemented in Excel and Python (Python with AI example). In Python, PID parameters can be set automatically. Excel file with numeric basics included.
 
@@ -16,7 +16,7 @@ From the course "Mechatronische Systeme (Mechatronic Systems)" and "Künstliche 
 
 ___________________________________________________________________________________________
 
-Regelungstechnik mit Python und Künstlicher Intelligenz (Evolutionäre Algorithmen)
+**Regelungstechnik mit Python und Künstlicher Intelligenz (Evolutionäre Algorithmen)**
 
 Implementierung der Regelglieder und Regelkreise in Excel und Python (Python auch mit Künstlicher Intelligenz). PID Parameter können mit Python automatisch ermittelt werden. Eine Excel-Datei zur Veranschaulichung der Numerik liegt bei.
 
