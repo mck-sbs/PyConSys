@@ -4,6 +4,16 @@ Control System with Python and Artificial Intelligence (Evolutionary Algorithm)
 Control units and control loops implemented in Excel and Python (Python with AI example). In Python, PID parameters can be set automatically. Excel file with numeric basics included.
 
 From the course "Mechatronische Systeme (Mechatronic Systems)" and "Künstliche Intelligenz (Artificial Intelligence)", technical college SBS Herzogenaurach-Höchstadt.
+
+**Step responses with different control units:**
+![Step Response](./pics/step_response.png)
+
+**PT2 - PID control loop with PID parameters set by the software:**
+![PT2 - PID](./pics/pt2.png)
+
+**PT2 - PID control loop with manually set PID parameters:**
+![PT2_manual](./pics/pt2.png)
+
 ___________________________________________________________________________________________
 
 Regelungstechnik mit Python und Künstlicher Intelligenz (Evolutionäre Algorithmen)
