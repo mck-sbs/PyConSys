@@ -12,7 +12,7 @@ From the course "Mechatronische Systeme (Mechatronic Systems)" and "Künstliche 
 ![PT2 - PID](./pics/pt2.png)
 
 **PT2 - PID control loop with manually set PID parameters:**
-![PT2_manual](./pics/pt2.png)
+![PT2_manual](./pics/PT2_manual.png)
 
 ___________________________________________________________________________________________
 
