@@ -1,6 +1,7 @@
 # PyConSys
 **Control System with Python and Artificial Intelligence (Evolutionary Algorithm)**
 
+![conrol loop](./pics/control_loop.png)
 Control units and control loops implemented in Excel and Python (Python with AI example). In Python, PID parameters can be set automatically. Excel file with numeric basics included.
 
 From the course "Mechatronische Systeme (Mechatronic Systems)" and "Künstliche Intelligenz (Artificial Intelligence)", technical college SBS Herzogenaurach-Höchstadt.
