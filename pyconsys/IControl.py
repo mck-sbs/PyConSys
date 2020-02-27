@@ -15,4 +15,3 @@ class IControl(Control):
     def get_xa(self, xe):
         self._sum = self._sum + xe
         return self._ki * self._sum * self.DELTA_T
-
