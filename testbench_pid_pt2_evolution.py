@@ -18,6 +18,7 @@ pid_control = PIDControl(0, 0, 0)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
+
 def calculate(pid_lst):
     p = pid_lst[0]
     i = pid_lst[1]
@@ -42,6 +43,8 @@ def calculate(pid_lst):
 
 #####################################################
 # start the evolution
+
+
 time_stamp = time.time()
 
 evo = Evopid(calculate)
@@ -71,8 +74,6 @@ for w in w_lst_fin:
     x = pt2.get_xa(y)
     x_lst_fin.append(x)
 
-
-
 print("##### best score: {:7.2f}".format(best_score))
 print("##### evolution time: {:7.2f}".format(tm))
 
@@ -92,4 +93,3 @@ plt.text(1.5, 0.1, txt_pt2, bbox=dict(facecolor='white', alpha=0.5))
 plt.legend()
 plt.ylim(top=2, bottom=0)
 plt.show()
-

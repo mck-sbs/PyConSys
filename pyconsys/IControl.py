@@ -16,6 +16,3 @@ class IControl(Control):
         self._sum = self._sum + xe
         return self._ki * self._sum * self.DELTA_T
 
-
-
-

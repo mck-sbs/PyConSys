@@ -13,4 +13,3 @@ class PControl(Control):
 
     def get_xa(self, xe):
         return xe * self._kp
-

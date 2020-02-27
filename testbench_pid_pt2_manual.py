@@ -3,7 +3,6 @@
 
 
 from pyconsys.PIDControl import PIDControl
-from pyconsys.Control import Control
 from pyconsys.PT2 import PT2
 import matplotlib.pyplot as plt
 

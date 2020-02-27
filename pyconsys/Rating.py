@@ -5,12 +5,8 @@
 import numpy as np
 from math import isnan
 
-class Rating():
 
-    # def __init__(self, lst, w):
-    #     self._lst = lst
-    #     self._w = w
-    #     self._chunk_size = 100
+class Rating():
 
     def __init__(self):
         self._chunk_size = 100
@@ -79,4 +75,3 @@ class Rating():
             if abs(rat - 100) < 5:
                 break
         return i
-

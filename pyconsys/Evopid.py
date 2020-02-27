@@ -7,6 +7,7 @@ import random
 from operator import itemgetter
 import statistics
 
+
 class Evopid():
 
     def __init__(self, func):
@@ -60,8 +61,6 @@ class Evopid():
             pop_lst.clear()
 
         return best_pid, best_score, plot_score_mean
-
-
 
     def _get_first_pop_lst(self):
         pop = []
