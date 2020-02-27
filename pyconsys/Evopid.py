@@ -59,6 +59,7 @@ class Evopid():
             plot_score.clear()
             pop_lst.clear()
 
+        assert i == self._number_of_generation, "evolution incomplete"
         return best_pid, best_score, plot_score_mean
 
 
