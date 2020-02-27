@@ -6,21 +6,17 @@ from pyconsys.PIDControl import PIDControl
 from pyconsys.PT2 import PT2
 from pyconsys.Rating import Rating
 from pyconsys.Evopid import Evopid
-from operator import itemgetter
 import matplotlib.pyplot as plt
-import statistics
 import time
 
 pt2_a2 = 0.2
-pt2_a1 = 0.1
+pt2_a1 = 0.05
 pt2_a0 = 1
 pt2_b0 = 1
 
 pid_control = PIDControl(0, 0, 0)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
-
-time_stamp = time.time()
 
 def calculate(pid_lst):
     p = pid_lst[0]
@@ -46,61 +42,18 @@ def calculate(pid_lst):
 
 #####################################################
 # start the evolution
-evo = Evopid()
-pop_lst = evo.get_first_pop_lst()
+time_stamp = time.time()
 
-plot_score = []
-plot_score_mean = []
+evo = Evopid(calculate)
+best_pid, best_score, plot_score_mean = evo.run()
 
-best_score = 0
-best_pid = []
-# first run
-perf_lst = []
-for elem in pop_lst:
-    score = calculate(elem)
-    if score > best_score:
-        best_score = score
-        best_pid = elem
-    plot_score.append(score)
-    perf_lst.append([score, elem])
-perf_lst.sort(key=itemgetter(0), reverse=True)
-breeders = evo.select_from_pop(perf_lst)
-final_pop = evo.next_generation(breeders)
-plot_score_mean.append(statistics.mean(plot_score))
-plot_score.clear()
-
-# get the rest done
-for i in range(evo.get_iter_cnt() - 1):
-    p_lst = []
-    n_pop = final_pop
-    for elem in n_pop:
-        score = calculate(elem)
-        if score > best_score:
-            best_score = score
-            best_pid = elem
-        p_lst.append([score, elem])
-        plot_score.append(score)
-    p_lst.sort(key=itemgetter(0), reverse=True)
-    brs = evo.select_from_pop(p_lst)
-    n_pop = evo.next_generation(brs)
-    final_pop = n_pop
-
-    plot_score_mean.append(statistics.mean(plot_score))
-    plot_score.clear()
+tm = time.time() - time_stamp
 
 plt.title("evolution score")
 plt.plot(plot_score_mean, label="mean score (generation)")
 plt.show()
 ####################################################
-# final_pop are the fittest, but which one is the most fittest
-# best_score = 0
-# best_pid = []
-# for elem in final_pop:
-#     score = calculate(elem)
-#     if score > best_score:
-#         best_score = score
-#         best_pid = elem
-
+# plot the fittest control loop
 xe_lst_fin = [x for x in range(0, 500)]
 w_lst_fin = [1 for x in xe_lst_fin]
 x_lst_fin = []
@@ -119,7 +72,7 @@ for w in w_lst_fin:
     x_lst_fin.append(x)
 
 
-tm = time.time() - time_stamp
+
 print("##### best score: {:7.2f}".format(best_score))
 print("##### evolution time: {:7.2f}".format(tm))
 
