@@ -1,7 +1,7 @@
 # Any copyright is dedicated to the Public Domain.
 # https://creativecommons.org/publicdomain/zero/1.0/
 
-
+from pyconsys.Control import Control
 from pyconsys.PIDControl import PIDControl
 from pyconsys.PT2 import PT2
 import matplotlib.pyplot as plt
@@ -19,7 +19,7 @@ pt2_b0 = 1
 pid_control = PIDControl(pid_p, pid_i, pid_d)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 
-xe_lst = [x for x in range(0, 500)]
+xe_lst = [x * Control.DELTA_T for x in range(0, 500)]
 w_lst = [1 if x > 1 else 0 for x in xe_lst]
 e_lst = []
 y_lst = []
@@ -53,7 +53,7 @@ plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')
 plt.grid(which='minor', linestyle=':', linewidth='0.3')
 
-plt.xlabel('k')
+plt.xlabel('k in hundreds')
 plt.title("PT2 control loop with PID (interference z = 0.5 at k = 250)")
 plt.text(1.5, 0.3, txt_pid, bbox=dict(facecolor='white', alpha=0.5))
 plt.text(1.5, 0.1, txt_pt2, bbox=dict(facecolor='white', alpha=0.5))

@@ -37,7 +37,7 @@ plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')
 plt.grid(which='minor', linestyle=':', linewidth='0.3')
 
-plt.xlabel('xe')
+plt.xlabel('xe in hundreds')
 plt.ylabel('xa')
 plt.title("control units - sinus response")
 plt.legend()

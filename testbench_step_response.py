@@ -1,7 +1,7 @@
 # Any copyright is dedicated to the Public Domain.
 # https://creativecommons.org/publicdomain/zero/1.0/
 
-
+from pyconsys.Control import Control
 from pyconsys.PControl import PControl
 from pyconsys.IControl import IControl
 from pyconsys.DControl import DControl
@@ -17,7 +17,7 @@ d_control = DControl(1)
 pt1 = PT1(1, 0.5)
 pt2 = PT2(0.2, 0.05, 1, 1)
 
-xe_lst = [x for x in range(0, 500)]
+xe_lst = [x * Control.DELTA_T for x in range(0, 1000)]
 
 xa_lst_p = [p_control.get_xa(1) if x > 1 else p_control.get_xa(0) for x in xe_lst]
 xa_lst_i = [i_control.get_xa(1) if x > 1 else i_control.get_xa(0) for x in xe_lst]
@@ -37,7 +37,7 @@ plt.grid(which='major', linestyle='-', linewidth='0.5')
 plt.grid(which='minor', linestyle=':', linewidth='0.3')
 plt.ylim(top=5, bottom=0)
 
-plt.xlabel('xe')
+plt.xlabel('xe in hundreds')
 plt.ylabel('xa')
 plt.title("control units - step response")
 plt.legend()
