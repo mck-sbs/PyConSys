@@ -8,7 +8,7 @@ from pyconsys.Control import Control
 
 class DelayControl(Control):
     """ Delay control unit """
-    def __init__(self, delay=2):
+    def __init__(self, delay=0):
         """ set delay
         Parameters:
         delay(int): delay """
