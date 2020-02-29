@@ -18,7 +18,7 @@ pid_control = PIDControl(0, 0, 0)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
-
+# define a function to get the fitness score of a pid triple parameters
 def calculate(pid_lst):
     p = pid_lst[0]
     i = pid_lst[1]
@@ -47,7 +47,9 @@ def calculate(pid_lst):
 
 time_stamp = time.time()
 
+# The constructor needs the fitness function as a callback
 evo = Evopid(calculate)
+# start the evolution
 best_pid, best_score, plot_score_mean = evo.run()
 
 tm = time.time() - time_stamp
