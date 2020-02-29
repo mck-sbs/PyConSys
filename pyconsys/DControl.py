@@ -7,12 +7,21 @@ from pyconsys.Control import Control
 
 
 class DControl(Control):
-
-    def __init__(self, kd):
+    """ D control unit """
+    def __init__(self, kd=1):
+        """ set Kd
+        Parameters:
+        kd(float): Kd """
         self._kd = kd
         self._xe_old = 0
 
     def get_xa(self, xe):
+        """ give input, get output
+        Parameters:
+        xe(float): input xe
+
+        Returns:
+        float: output xa """
         xa = self._kd * ((xe - self._xe_old) / self.DELTA_T)
         self._xe_old = xe
         return xa

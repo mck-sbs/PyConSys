@@ -9,8 +9,11 @@ import statistics
 
 
 class Evopid():
-
+    """ the evolution """
     def __init__(self, func):
+        """
+        Parameters:
+        func(function): callback function to get the fitness """
         self._fittest_cnt = 10
         self._lucky_few = 150
         self._children_cnt = 10
@@ -21,6 +24,7 @@ class Evopid():
         self._pop_size = int((self._fittest_cnt + self._lucky_few) / 2 * self._children_cnt)
 
     def run(self):
+        """ do the evolution """
         plot_score = []
         plot_score_mean = []
         best_score = 0

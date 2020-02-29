@@ -9,12 +9,23 @@ from pyconsys.DControl import DControl
 
 
 class PIDControl():
+    """ PID controller """
     def __init__(self, kp, ki, kd):
+        """ set Kp, Ki, Kd
+        Parameters:
+        kp(float): Kp
+        ki(float): Ki
+        kd(float): Kd """
         self._pControl = PControl(kp)
         self._iControl = IControl(ki)
         self._dControl = DControl(kd)
 
     def update_params(self, kp, ki, kd):
+        """ update Kp, Ki, Kd
+        Parameters:
+        kp(float): Kp
+        ki(float): Ki
+        kd(float): Kd """
         self._pControl._kp = kp
         self._iControl._ki = ki
         self._iControl._sum = 0
@@ -22,5 +33,11 @@ class PIDControl():
         self._dControl._xe_old = 0
 
     def get_xa(self, xe):
+        """ give input, get output
+        Parameters:
+        xe(float): input xe
+
+        Returns:
+        float: output xa """
         xa = self._pControl.get_xa(xe) + self._iControl.get_xa(xe) + self._dControl.get_xa(xe)
         return xa

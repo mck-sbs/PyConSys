@@ -7,11 +7,20 @@ from pyconsys.Control import Control
 
 
 class IControl(Control):
-
-    def __init__(self, ki):
+    """ I control unit"""
+    def __init__(self, ki=1):
+        """ set Ki
+        Parameters:
+        ki(float): Ki """
         self._ki = ki
         self._sum = 0
 
     def get_xa(self, xe):
+        """ give input, get output
+        Parameters:
+        xe(float): input xe
+
+        Returns:
+        float: output xa """
         self._sum = self._sum + xe
         return self._ki * self._sum * self.DELTA_T

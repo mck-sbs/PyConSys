@@ -4,6 +4,7 @@
 
 
 class Control():
+    """ This should be an abstract class. Do not instantiate."""
     DELTA_T = 0.01
 
     def get_xa(self, xe):

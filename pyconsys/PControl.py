@@ -7,9 +7,18 @@ from pyconsys.Control import Control
 
 
 class PControl(Control):
-
-    def __init__(self, kp):
+    """ I control unit"""
+    def __init__(self, kp=1):
+        """set Kp
+        Parameters:
+        kp(float): Kp"""
         self._kp = kp
 
     def get_xa(self, xe):
+        """ give input, get output
+        Parameters:
+        xe(float): input xe
+
+        Returns:
+        float: output xa """
         return xe * self._kp

@@ -7,13 +7,20 @@ from math import isnan
 
 
 class Rating():
-
+    """ rates the quality of control curves """
     def __init__(self):
         self._chunk_size = 100
         self._lst = []
         self._w = 0
 
     def get_update_rating(self, lst, w):
+        """ give input, get output
+        Parameters:
+        lst(list): list of x values
+        w(float): the w value of the loop
+
+        Returns:
+        float: rating """
         self._lst = lst
         self._w = w
         ret = self._get_rating()
