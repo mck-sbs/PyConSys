@@ -18,7 +18,7 @@ pid_control = PIDControl(0, 0, 0)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
-# define a function to get the fitness score of a pid triple parameters
+# define a function to get the fitness score of a pid triple
 def calculate(pid_lst):
     p = pid_lst[0]
     i = pid_lst[1]
