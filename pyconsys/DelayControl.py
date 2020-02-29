@@ -11,7 +11,7 @@ class DelayControl(Control):
     def __init__(self, delay=2):
         """ set delay
         Parameters:
-        delay(float): delay """
+        delay(int): delay """
         self._delay = delay
         self._queue = queue.Queue()
         self._counter = 0
