@@ -13,6 +13,9 @@ class PT1(Control):
         self._t = t
         self._xa_old = 0
 
+    def reset(self):
+        self._xa_old = 0
+
     def get_xa(self, xe):
         xa = (self._p * xe * self.DELTA_T + self._t * self._xa_old) / (self._t + self.DELTA_T)
         self._xa_old = xa

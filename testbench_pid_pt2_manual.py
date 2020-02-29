@@ -19,8 +19,8 @@ pt2_b0 = 1
 pid_control = PIDControl(pid_p, pid_i, pid_d)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 
-xe_lst = [x * Control.DELTA_T for x in range(0, 500)]
-w_lst = [1 if x > 1 else 0 for x in xe_lst]
+time_steps = [x * Control.DELTA_T for x in range(0, 500)]
+w_lst = [1 if x > 1 else 0 for x in time_steps]
 e_lst = []
 y_lst = []
 x_lst = []
@@ -43,11 +43,11 @@ for w in w_lst:
 
 txt_pid = "PID with P = {}, I = {}, D = {}".format(pid_p, pid_i, pid_d)
 txt_pt2 = "PT2 with a2 = {}, a1 = {}, a0 = {}, b0 = {}".format(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
-plt.plot(xe_lst, w_lst, label="w")
-plt.plot(xe_lst, e_lst, label="e")
-plt.plot(xe_lst, y_lst, label="y")
-plt.plot(xe_lst, x_lst, label="x")
-plt.plot(xe_lst, z_lst, label="z")
+plt.plot(time_steps, w_lst, label="w")
+plt.plot(time_steps, e_lst, label="e")
+plt.plot(time_steps, y_lst, label="y")
+plt.plot(time_steps, x_lst, label="x")
+plt.plot(time_steps, z_lst, label="z")
 plt.grid()
 plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')

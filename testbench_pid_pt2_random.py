@@ -21,8 +21,8 @@ pid_control = PIDControl(pid_p, pid_i, pid_d)
 pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
-xe_lst = [x * Control.DELTA_T for x in range(0, 500)]
-w_lst = [1 for x in xe_lst]
+time_steps = [x * Control.DELTA_T for x in range(0, 500)]
+w_lst = [1 for x in time_steps]
 e_lst = []
 y_lst = []
 x_lst = []
@@ -77,18 +77,18 @@ for w in w_lst:
 
 txt_pid = "PID with P = {}, I = {}, D = {}".format(best_pid_p, best_pid_i, best_pid_d)
 txt_pt2 = "PT2 with a2 = {}, a1 = {}, a0 = {}, b0 = {}".format(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
-plt.plot(xe_lst, w_lst, label="w")
-plt.plot(xe_lst, e_lst, label="e")
-plt.plot(xe_lst, y_lst, label="y")
-plt.plot(xe_lst, x_lst, label="x")
-plt.plot(xe_lst, z_lst, label="z")
+plt.plot(time_steps, w_lst, label="w")
+plt.plot(time_steps, e_lst, label="e")
+plt.plot(time_steps, y_lst, label="y")
+plt.plot(time_steps, x_lst, label="x")
+plt.plot(time_steps, z_lst, label="z")
 plt.grid()
 plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')
 plt.grid(which='minor', linestyle=':', linewidth='0.3')
 
 plt.xlabel('k in hundreds')
-plt.title("PT2 control loop with random PID")
+plt.title("PT2 control loop with best random PID")
 plt.text(1.5, 0.3, txt_pid, bbox=dict(facecolor='white', alpha=0.5))
 plt.text(1.5, 0.1, txt_pt2, bbox=dict(facecolor='white', alpha=0.5))
 plt.legend()

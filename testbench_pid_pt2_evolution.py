@@ -24,8 +24,8 @@ def calculate(pid_lst):
     i = pid_lst[1]
     d = pid_lst[2]
 
-    xe_lst = [x * Control.DELTA_T for x in range(0, 500)]
-    w_lst = [1 for x in xe_lst]
+    time_steps = [x * Control.DELTA_T for x in range(0, 500)]
+    w_lst = [1 for x in time_steps]
     x_lst = []
     x = 0
 
@@ -57,8 +57,8 @@ plt.plot(plot_score_mean, label="mean score (generation)")
 plt.show()
 ####################################################
 # plot the fittest control loop
-xe_lst_fin = [x * Control.DELTA_T for x in range(0, 500)]
-w_lst_fin = [1 for x in xe_lst_fin]
+time_steps_fin = [x * Control.DELTA_T for x in range(0, 500)]
+w_lst_fin = [1 for x in time_steps_fin]
 x_lst_fin = []
 x = 0
 best_pid_p = best_pid[0]
@@ -79,8 +79,8 @@ print("##### evolution time: {:7.2f}".format(tm))
 
 txt_pid = "PID with P = {}, I = {}, D = {}".format(best_pid_p, best_pid_i, best_pid_d)
 txt_pt2 = "PT2 with a2 = {}, a1 = {}, a0 = {}, b0 = {}".format(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
-plt.plot(xe_lst_fin, w_lst_fin, label="w")
-plt.plot(xe_lst_fin, x_lst_fin, label="x")
+plt.plot(time_steps_fin, w_lst_fin, label="w")
+plt.plot(time_steps_fin, x_lst_fin, label="x")
 plt.grid()
 plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')

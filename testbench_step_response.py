@@ -17,20 +17,20 @@ d_control = DControl(1)
 pt1 = PT1(1, 0.5)
 pt2 = PT2(0.2, 0.05, 1, 1)
 
-xe_lst = [x * Control.DELTA_T for x in range(0, 1000)]
+time_steps = [x * Control.DELTA_T for x in range(0, 1000)]
 
-xa_lst_p = [p_control.get_xa(1) if x > 1 else p_control.get_xa(0) for x in xe_lst]
-xa_lst_i = [i_control.get_xa(1) if x > 1 else i_control.get_xa(0) for x in xe_lst]
-xa_lst_d = [d_control.get_xa(1) if x > 1 else d_control.get_xa(0) for x in xe_lst]
-xa_lst_pt1 = [pt1.get_xa(1) if x > 1 else pt1.get_xa(0) for x in xe_lst]
-xa_lst_pt2 = [pt2.get_xa(1) if x > 1 else pt2.get_xa(0) for x in xe_lst]
+xa_lst_p = [p_control.get_xa(1) if x > 1 else p_control.get_xa(0) for x in time_steps]
+xa_lst_i = [i_control.get_xa(1) if x > 1 else i_control.get_xa(0) for x in time_steps]
+xa_lst_d = [d_control.get_xa(1) if x > 1 else d_control.get_xa(0) for x in time_steps]
+xa_lst_pt1 = [pt1.get_xa(1) if x > 1 else pt1.get_xa(0) for x in time_steps]
+xa_lst_pt2 = [pt2.get_xa(1) if x > 1 else pt2.get_xa(0) for x in time_steps]
 
 
-plt.plot(xe_lst, xa_lst_p, label="P control")
-plt.plot(xe_lst, xa_lst_i, label="I control")
-plt.plot(xe_lst, xa_lst_d, label="D control")
-plt.plot(xe_lst, xa_lst_pt1, label="PT1")
-plt.plot(xe_lst, xa_lst_pt2, label="PT2")
+plt.plot(time_steps, xa_lst_p, label="P control")
+plt.plot(time_steps, xa_lst_i, label="I control")
+plt.plot(time_steps, xa_lst_d, label="D control")
+plt.plot(time_steps, xa_lst_pt1, label="PT1")
+plt.plot(time_steps, xa_lst_pt2, label="PT2")
 plt.grid()
 plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5')
