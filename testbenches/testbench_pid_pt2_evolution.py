@@ -19,6 +19,8 @@ pt2 = PT2(pt2_a2, pt2_a1, pt2_a0, pt2_b0)
 rating = Rating()
 
 # define a function to get the fitness score of a pid triple
+
+
 def calculate(pid_lst):
     p = pid_lst[0]
     i = pid_lst[1]
@@ -46,7 +48,7 @@ def calculate(pid_lst):
 
 
 time_stamp = time.time()
-
+print("Evolution is running. Please wait...")
 # The constructor needs the fitness function as a callback
 evo = Evopid(calculate)
 # start the evolution
