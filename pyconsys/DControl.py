@@ -15,6 +15,11 @@ class DControl(Control):
         self._kd = kd
         self._xe_old = 0
 
+    def reset(self, kd):
+        """ resets the unit """
+        self._kd = kd
+        self._xe_old = 0
+
     def get_xa(self, xe):
         """ give input, get output
         Parameters:

@@ -15,6 +15,11 @@ class IControl(Control):
         self._ki = ki
         self._sum = 0
 
+    def reset(self, ki):
+        """ resets the unit """
+        self._ki = ki
+        self._sum = 0
+
     def get_xa(self, xe):
         """ give input, get output
         Parameters:

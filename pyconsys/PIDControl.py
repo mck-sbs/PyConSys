@@ -26,11 +26,9 @@ class PIDControl():
         kp(float): Kp
         ki(float): Ki
         kd(float): Kd """
-        self._pControl._kp = kp
-        self._iControl._ki = ki
-        self._iControl._sum = 0
-        self._dControl._kd = kd
-        self._dControl._xe_old = 0
+        self._pControl.reset(kp)
+        self._iControl.reset(ki)
+        self._dControl.reset(kd)
 
     def get_xa(self, xe):
         """ give input, get output

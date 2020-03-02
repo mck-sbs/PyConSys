@@ -16,6 +16,12 @@ class DelayControl(Control):
         self._queue = queue.Queue()
         self._counter = 0
 
+    def reset(self, delay):
+        """ resets the unit """
+        self._delay = delay
+        self._counter = 0
+        self._queue.queue.clear()
+
     def get_xa(self, xe):
         """ give input, get output
         Parameters:

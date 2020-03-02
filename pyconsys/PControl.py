@@ -14,6 +14,10 @@ class PControl(Control):
         kp(float): Kp"""
         self._kp = kp
 
+    def reset(self, kp):
+        """ resets the unit """
+        self._kp = kp
+
     def get_xa(self, xe):
         """ give input, get output
         Parameters:
