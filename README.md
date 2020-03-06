@@ -10,6 +10,7 @@ From the course "Mechatronische Systeme (Mechatronic Systems)" and "Künstliche 
 ![Step Response](./pics/step_response.png)
 
 **PT2 - PID control loop with PID parameters set by the software:**
+![PT2 - formula](./pics/pt2-formula.png)
 ![PT2 - PID](./pics/pt2.png)
 
 **PT2 - PID control loop with manually set PID parameters:**
