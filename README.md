@@ -24,6 +24,14 @@ Implementierung der Regelglieder und Regelkreise in Excel und Python (Python auc
 
 Aus dem Unterricht "Mechatronische Systeme" und "Künstliche Intelligenz" an der Fachschule für Maschinenbautechnik und Mechatroniktechnik, SBS Herzogenaurach-Höchstadt.
 
+![evo-0](./pics/evo-0.png)
+![evo-1](./pics/evo-1.png)
+![evo-2](./pics/evo-2.png)
+![evo-3](./pics/evo-3.png)
+![evo-4](./pics/evo-4.png)
+![evo-5](./pics/evo-5.png)
+![evo-6](./pics/evo-6.png)
+
 ___________________________________________________________________________________________
 
 This Source Code Form is subject to the terms of the Mozilla Public
