@@ -9,24 +9,24 @@ import matplotlib.pyplot as plt
 import time
 import pygad
 
-# Hyperparameter
+# Hyperparameters
 
-# Anzahl der Gene
+# number of genes
 num_genes = 3
-# Anzahl der Generationen
+# number of generations
 num_generations = 20
-# Anzahl der Chromosomen
+# number of chromosomes
 sol_per_pop = 10
-# Anzahl der Eltern
+# number of parents
 num_parents_mating = 10
-# Wahrscheinlichkeit zur Mutation
+# probably of mutation
 mutation_percent_genes = 34
 
-# untere Grenze der Zufallszahl
+# lower limit of the random number
 init_range_low = 0
-# obere Grenze der Zufallszahl
+# upper limit of the random number
 init_range_high = 100
-# Datentyp
+# data type
 gene_type = float
 
 
@@ -53,13 +53,15 @@ def fitness_func(ga_instance, solution, solution_idx):
     pid_control.update_params(p, i, d)
     pt2.reset()
 
+    ww = 0
     for w in w_lst:
         e = w - x
         y = pid_control.get_xa(e)
         x = pt2.get_xa(y)
         x_lst.append(x)
+        ww = w
 
-    fitness = rating.get_update_rating(x_lst, w)
+    fitness = rating.get_update_rating(x_lst, ww)
 
     return fitness
 
@@ -88,9 +90,9 @@ tm = time.time() - time_stamp
 
 solution, solution_fitness, solution_idx = ga_instance.best_solution()
 
-print("Benötigte Zeit:", tm)
-print("Beste Parameter:", solution)
-print("Höchster Fitnesswert:", solution_fitness)
+print("Required time:", tm)
+print("Best parameters:", solution)
+print("Highest fitness value:", solution_fitness)
 ga_instance.plot_fitness()
 ####################################################
 # plot the fittest control loop
